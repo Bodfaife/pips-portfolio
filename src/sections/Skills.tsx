@@ -12,7 +12,7 @@ const skills: Skill[] = [
   { name: "React", level: "Advanced" },
   { name: "Tailwind CSS", level: "Intermediate" },
   { name: "Node.js", level: "Intermediate" },
-  { name: "Flutter", level: "Beginner" },
+  { name: "Flutter", level: "Advanced" },
   { name: "Python", level: "Intermediate" },
   { name: "Git & GitHub", level: "Advanced" },
 ]

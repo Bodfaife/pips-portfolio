@@ -91,7 +91,7 @@ export default function Timeline() {
        <p className="text-xl text-slate-400 text-center justify-center">
         Journey with me through the certifications that built my expertise and shaped my growth
        </p>
-       
+
       <div className="relative h-[850px] md:h-[750px] overflow-visible">
         {events.map((event, i) => {
           const isAbove = i % 2 === 0
