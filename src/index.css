@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GLOBAL STYLES */
+html, body {
+  background-color: #020617;
+  color: #e5e7eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  scroll-behavior: smooth; /* smoother scrolling */
+  overflow-x: hidden;      /* prevent accidental horizontal scroll from animations */
+}
+
+/* SECTIONS */
+section {
+  position: relative;
+  z-index: 10;
+}
+
+/* IMAGES */
+img {
+  image-rendering: auto;
+  will-change: transform; /* help with animation performance */
+  user-select: none;      /* prevent accidental selection */
+  pointer-events: none;   /* avoid blocking interactive elements */
+}
+
+/* LINKS & BUTTONS */
+a {
+  transition: color 0.3s;
+}
+button {
+  transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+/* MINIONS / FLOATING ELEMENTS */
+.minion {
+  position: fixed;       /* so they float globally */
+  pointer-events: none;  /* don’t block clicks */
+  z-index: 30;
+  will-change: transform;
+}
+
+/* TYPOGRAPHY ADJUSTMENTS */
+h1, h2, h3, h4, h5, h6 {
+  color: #e5e7eb;
+  line-height: 1.2;
+}
+p {
+  line-height: 1.6;
+  color: #cbd5e1;
+}
