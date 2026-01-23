@@ -40,7 +40,8 @@ export default function Projects() {
     <section 
       id="projects"
     className="max-w-7xl mx-auto px-6 py-32">
-      <h2 className="text-4xl font-bold mb-10">My Projects</h2>
+      <h2 className="text-4xl font-bold mb-10">My <span className="text-accent">Projects</span>
+      </h2>
 
      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
   {projects.map((project) => (
