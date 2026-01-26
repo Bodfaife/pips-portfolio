@@ -57,26 +57,29 @@ export default function Contact() {
           
         </form>
 
-        {/* Social Icons */}
-        <div className="flex text-left gap-4 mt-12">
-          {icons.map((item, i) => {
-            const IconComponent = item.icon;
-            return (
-              <motion.a
-                key={i}
-                href={item.link}
-                target="_blank"
-                rel="noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-950 border-2 border-slate-950 transition"
-                animate={{ y: [0, -6, 0] }} // floating motion
-                transition={{ repeat: Infinity, duration: 2 + i * 0.5, ease: "easeInOut" }}
-                
-              >
-                <IconComponent className="text-accent w-6 h-6" />
-              </motion.a>
-            );
-          })}
-        </div>
+         {/* SOCIAL ICONS */}
+          <div className="flex gap-4 mt-10">
+            {icons.map((item, i) => {
+              const Icon = item.icon
+              return (
+                <motion.a
+                  key={i}
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-950 border-2 border-slate-900"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 2 + i * 0.4,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <Icon className="text-accent w-6 h-6" />
+                </motion.a>
+              )
+            })}
+          </div>
       </motion.div>
     </section>
   );
