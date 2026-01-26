@@ -50,3 +50,17 @@ p {
   line-height: 1.6;
   color: #cbd5e1;
 }
+
+/* Glow-on-hover for portfolio stat cards */
+.stat-card {
+  background: #0f172a; /* adjust to your theme */
+  padding: 1.5rem;
+  border-radius: 14px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); /* adjust glow color to your theme */
+}

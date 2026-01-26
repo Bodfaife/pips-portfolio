@@ -62,8 +62,8 @@ const events: TimelineEvent[] = [
 ]
 
 export default function Timeline() {
-  const [animationTrigger, setAnimationTrigger] =
-    React.useState<number>(0)
+  const [animationTrigger, setAnimationTrigger] = React.useState(0)
+  const [isMobile, setIsMobile] = React.useState(false)
 
   const [ref, inView] = useInView({
     triggerOnce: false,
@@ -76,28 +76,38 @@ export default function Timeline() {
     }
   }, [inView])
 
+    React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
+   // Timeline Stats
+  const timelineStats = [
+    { value: "6+", label: "🎓 Certifications" },
+    { value: "3+", label: "📚 Learning Platforms" },
+    { value: "2+ yrs", label: "⏳ Growth Journey" },
+    { value: "∞", label: "🚀 Still Learning" },
+  ]
 
   return (
     <section
       id="timeline"
       ref={ref}
-      className="relative overflow-hidden max-w-7xl mx-auto px-6 py-40"
+      className="relative overflow-hidden max-w-7xl mx-auto px-6 py-60"
     >
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-20">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
         My <span className="text-accent">Journey</span>
       </h2>
 
-       <p className="text-xl text-slate-400 text-center justify-center">
+      <p className="mt-6 text-xl text-slate-400 text-center max-w-3xl mx-auto">
         Journey with me through the certifications that built my expertise and shaped my growth
        </p>
 
       <div className="relative h-[850px] md:h-[750px] overflow-visible">
         {events.map((event, i) => {
           const isAbove = i % 2 === 0
-
-         const isMobile =
-  typeof window !== "undefined" && window.innerWidth < 768
 
           const CARD_GAP = isMobile ? 80 : 50
           const startX = 100 + i * CARD_GAP
@@ -130,7 +140,10 @@ export default function Timeline() {
               </div>
 
               <div className="mt-4 text-center max-w-xs text-white">
-                <h3 className="font-semibold text-lg">{event.title}</h3>
+                    <span className="text-xs uppercase tracking-wider text-accent">
+                  {event.year}
+                  </span>
+                <h3 className="font-semibold text-lg mt-1">{event.title}</h3>
                 <p className="text-slate-300 text-sm mt-1">
                   {event.description}
                 </p>
@@ -139,7 +152,27 @@ export default function Timeline() {
           )
         })}
 
-        <div className="absolute top-[68%] md:top-[58%] left-0 w-full h-[2px] bg-white/10" />
+        <div className="absolute top-[70%] md:top-[65%] left-0 w-full h-[2px] bg-white/10" />
+      </div>
+
+       {/* Timeline StatsGrid */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-60 mb-24 text-center">
+        {timelineStats.map((stat) => (
+          <div
+            key={stat.label}
+            className="rounded-2xl border border-white/10 bg-white/5 px-6 py-8
+                       backdrop-blur flex flex-col items-center justify-center
+                       transition hover:scale-105
+                       hover:shadow-[0_0_25px_#22c55e]"
+          >
+            <p className="text-3xl md:text-4xl font-bold text-accent">
+              {stat.value}
+            </p>
+            <p className="mt-2 text-sm uppercase tracking-wide text-slate-400">
+              {stat.label}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   )
