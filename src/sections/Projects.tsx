@@ -34,7 +34,7 @@ const projects: Project[] = [
     title: "Superteam Australia",
     desc: "Volunteer project for Superteam Australia, a web3 based platform",
     category: "Social",
-    image: "/superteam-australia.jpg",
+    image: "/superteam-australia.png",
   },
 ]
 
