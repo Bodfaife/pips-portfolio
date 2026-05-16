@@ -30,6 +30,12 @@ const projects: Project[] = [
     category: "Personal",
     image: "/portfolio.jpg",
   },
+   {
+    title: "Superteam Australia",
+    desc: "Volunteer project for Superteam Australia, a web3 based platform",
+    category: "Social",
+    image: "/superteam-australia.jpg",
+  },
 ]
 
 export default function Projects() {
