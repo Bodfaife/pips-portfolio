@@ -10,7 +10,7 @@ const projects: Project[] = [
     title: "Nest",
     desc: "Savings and loans platform",
     category: "Finance",
-    image: "/nest.jpg",
+    image: "/Nest.jpg",
   },
   {
     title: "Playground",
@@ -19,16 +19,10 @@ const projects: Project[] = [
     image: "/playground.jpg",
   },
   {
-    title: "Streammix",
-    desc: "Music streaming platform with curated playlists",
-    category: "Music",
-    image: "/streammix.jpg",
-  },
-  {
     title: "Pips Portfolio",
     desc: "Web-styled personal portfolio",
     category: "Personal",
-    image: "/portfolio.jpg",
+    image: "/pips.png",
   },
    {
     title: "Superteam Australia",
@@ -36,6 +30,24 @@ const projects: Project[] = [
     category: "Social",
     image: "/superteam-australia.png",
   },
+{
+  title: "Kreep",
+  desc: "Cryptocurrency platform",
+  category: "Finance",
+  image: "/Kreep.jpg",
+},
+{
+  title: "Bernice Portfolio",
+  desc: "Web-styled personal portfolio",
+  category: "Personal",
+  image: "/bernice.png",
+},
+{
+  title: "Wealth Collection",
+  desc: "Fashion E-commerce website",
+  category: "Business",
+  image: "/wealth.png",
+},
 ]
 
 export default function Projects() {

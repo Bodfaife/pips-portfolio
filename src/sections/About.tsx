@@ -47,7 +47,7 @@ export default function About() {
           className="relative z-10 w-[360px] md:w-[460px] h-[400px] md:h-[500px] rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden"
         >
           <img
-          src="/me5.jpg"
+          src="/new2.jpg"
           alt="Pips portrait"
           className="w-full h-full object-cover" /> 
         </motion.div>
